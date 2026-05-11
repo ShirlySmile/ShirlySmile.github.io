@@ -200,6 +200,12 @@
         repeating-linear-gradient(0deg, #ffffff, #ffffff 8px, #f7f4ee 8px, #f7f4ee 16px);
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 8px 10px;
+      color: #2f4f86;
+      font: 700 0.95rem/1 Arial, sans-serif;
     }
 
     .pub-thumb::before,
@@ -226,6 +232,23 @@
       box-shadow:
         0 -26px 0 rgba(154, 127, 119, 0.12),
         -14px -50px 0 rgba(220, 192, 143, 0.16);
+    }
+
+    .pub-thumb img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    .pub-thumb span {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 253, 249, 0.88);
+      padding: 4px 6px;
+      border: 1px solid rgba(215, 208, 198, 0.9);
     }
 
     .pub-rank {
@@ -345,52 +368,52 @@
             <article class="pub-item">
               <div>
                 <div class="pub-rank">Q1</div>
-                <div class="pub-thumb" aria-hidden="true"></div>
+                <div class="pub-thumb"><span>S2GRF</span></div>
               </div>
               <div>
                 <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Xu Liu, Lingling Li, Puhua Chen, Fang Liu, Shuyuan Yang</div>
                 <div class="pub-title">A Spatial-Spectral Relation-Guided Fusion Network for Multisource Optical RS Image Classification</div>
                 <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024</div>
-                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4020.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4020.htm" target="_blank" rel="noreferrer">Paper</a>] [<a href="https://github.com/ShirlySmile/S2GRF" target="_blank" rel="noreferrer">Code</a>]</div>
               </div>
             </article>
 
             <article class="pub-item">
               <div>
                 <div class="pub-rank">Q1</div>
-                <div class="pub-thumb" aria-hidden="true"></div>
+                <div class="pub-thumb"><span>PHFNet</span></div>
               </div>
               <div>
                 <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Xu Liu, Fang Liu, Shuyuan Yang</div>
                 <div class="pub-title">Fast and Effective: Progressive Hierarchical Fusion Classification for Remote Sensing Images</div>
                 <div class="pub-venue">IEEE Transactions on Multimedia (TMM), 2024</div>
-                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4019.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4019.htm" target="_blank" rel="noreferrer">Paper</a>] [<a href="https://github.com/ShirlySmile/PHFNet" target="_blank" rel="noreferrer">Code</a>]</div>
               </div>
             </article>
 
             <article class="pub-item">
               <div>
                 <div class="pub-rank">Q1</div>
-                <div class="pub-thumb" aria-hidden="true"></div>
+                <div class="pub-thumb"><span>KGCSL</span></div>
               </div>
               <div>
                 <div class="pub-authors"><span class="self">Xueli Geng</span>, Lingling Li, Licheng Jiao, Xu Liu, Fang Liu, Shuyuan Yang</div>
                 <div class="pub-title">Knowledge-Aware Geometric Contourlet Semantic Learning for Hyperspectral Image Classification</div>
                 <div class="pub-venue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2024</div>
-                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4018.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4018.htm" target="_blank" rel="noreferrer">Paper</a>] [<a href="https://github.com/ShirlySmile/KGCSL" target="_blank" rel="noreferrer">Code</a>]</div>
               </div>
             </article>
 
             <article class="pub-item">
               <div>
                 <div class="pub-rank">Q1</div>
-                <div class="pub-thumb" aria-hidden="true"></div>
+                <div class="pub-thumb"><span>MIBF-Net</span></div>
               </div>
               <div>
                 <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Fang Liu, Xu Liu, Shuyuan Yang, Xiangrong Zhang</div>
                 <div class="pub-title">Multisource Joint Representation Learning Fusion Classification for Remote Sensing Images</div>
                 <div class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2023</div>
-                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4017.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4017.htm" target="_blank" rel="noreferrer">Paper</a>] [<a href="https://github.com/ShirlySmile/MIBF-Net" target="_blank" rel="noreferrer">Code</a>]</div>
               </div>
             </article>
           </div>
