@@ -7,34 +7,33 @@
   <meta name="description" content="耿雪莉个人学术主页，支持中英文切换，包含简介、教育经历、论文、项目、获奖和学术服务。">
   <style>
     :root {
-      --bg: #fcfcfa;
-      --surface: #ffffff;
-      --ink: #1d1d1b;
-      --muted: #66655f;
-      --line: #e8e5df;
-      --accent: #7a4c3a;
-      --accent-soft: #f6f1ed;
-      --max: 920px;
+      --bg: #f8f7f3;
+      --paper: #fffdf9;
+      --ink: #171717;
+      --muted: #676767;
+      --line: #d8d3ca;
+      --blue: #3f6fba;
+      --gold: #dcc08f;
+      --accent: #9a7f77;
+      --max: 1080px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;
-      line-height: 1.75;
+      font-family: "Times New Roman", Georgia, "Noto Serif SC", "Songti SC", serif;
+      background:
+        linear-gradient(180deg, rgba(229, 211, 177, 0.7) 0, rgba(248, 247, 243, 0.12) 110px),
+        var(--bg);
+      line-height: 1.6;
     }
 
     a {
-      color: var(--accent);
+      color: var(--blue);
       text-decoration: none;
     }
 
@@ -42,406 +41,397 @@
       text-decoration: underline;
     }
 
-    .page {
-      width: min(var(--max), calc(100% - 32px));
+    .wrap {
+      width: min(var(--max), calc(100% - 28px));
       margin: 0 auto;
-      padding: 40px 0 72px;
+      padding: 22px 0 56px;
     }
 
-    .topbar {
+    .header-band {
+      margin-top: 2px;
+      background: rgba(255, 252, 247, 0.94);
+      border-radius: 26px 26px 0 0;
+      padding: 18px 24px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 18px;
+      border-bottom: 1px solid #e7dfd2;
+    }
+
+    .header-main {
+      display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 36px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+      min-width: 0;
     }
 
-    .topbar nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .topbar nav a,
-    .lang-toggle {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .lang-toggle {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: 999px;
-      padding: 8px 14px;
-      cursor: pointer;
-    }
-
-    .hero {
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
       display: grid;
-      grid-template-columns: 1.5fr 0.9fr;
-      gap: 42px;
-      align-items: start;
-      margin-bottom: 40px;
+      place-items: center;
+      color: #fff7ef;
+      font-weight: 700;
+      font-size: 1.3rem;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(140deg, #224f68, #576a5b 42%, #c68d3f 100%);
+    }
+
+    .title-box {
+      min-width: 0;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      font-size: 1.95rem;
       font-weight: 700;
-      letter-spacing: 0.01em;
     }
 
-    .subtitle {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 1.02rem;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-    }
-
-    .summary {
-      margin-top: 22px;
+    .subline {
+      margin-top: 3px;
+      color: #53616a;
       font-size: 1.04rem;
+      font-family: Arial, "PingFang SC", sans-serif;
     }
 
-    .links {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px 18px;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-      font-size: 0.96rem;
+    .lang-toggle {
+      border: 1px solid #d6d0c6;
+      background: #fffdfa;
+      color: #6a6a6a;
+      border-radius: 999px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font: 0.92rem Arial, sans-serif;
+      white-space: nowrap;
     }
 
-    .aside {
-      border-left: 1px solid var(--line);
-      padding-left: 24px;
+    .content {
+      background: var(--paper);
+      padding: 22px 20px 34px;
+      border-top: 0;
     }
 
-    .aside-block + .aside-block {
+    .intro {
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 26px;
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+    }
+
+    .intro-side {
+      font-size: 0.98rem;
+    }
+
+    .intro-side p {
+      margin: 0 0 8px;
+    }
+
+    .section {
       margin-top: 22px;
     }
 
-    .aside-label {
-      margin-bottom: 6px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-    }
-
-    .aside-value {
-      font-size: 0.98rem;
-    }
-
-    section {
-      margin-top: 34px;
-      padding-top: 8px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.56rem;
-      font-weight: 700;
-    }
-
-    .section-note {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-      font-size: 0.96rem;
-    }
-
-    .plain-list {
+    .section h2 {
       margin: 0;
-      padding-left: 20px;
-    }
-
-    .plain-list li + li {
-      margin-top: 8px;
-    }
-
-    .entry-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .entry {
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .entry:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .entry-title {
-      font-size: 1.06rem;
+      color: var(--blue);
+      font-size: 2rem;
       font-weight: 700;
     }
 
-    .entry-meta,
-    .entry-extra {
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-    }
-
-    .entry-extra {
+    .section-rule {
       margin-top: 6px;
+      border-top: 1px solid #bdb7ad;
     }
 
-    .paper-title {
+    .section-body {
+      padding-top: 12px;
+      font-size: 1.02rem;
+    }
+
+    .note {
+      margin: 0 0 16px;
+      font-size: 0.98rem;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .list li + li {
+      margin-top: 7px;
+    }
+
+    .pub-group {
       margin-top: 8px;
-      font-size: 1.05rem;
+    }
+
+    .pub-label {
+      margin: 14px 0 8px;
+      color: var(--blue);
+      font-size: 1.08rem;
       font-weight: 700;
     }
 
-    .authors {
-      margin-top: 4px;
-      font-size: 0.98rem;
+    .pub-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 14px 0 18px;
+    }
+
+    .pub-item + .pub-item {
+      border-top: 1px solid #ece8e1;
+    }
+
+    .pub-thumb {
+      width: 160px;
+      height: 96px;
+      border: 1px solid #d7d0c6;
+      background:
+        linear-gradient(135deg, rgba(63, 111, 186, 0.08), rgba(220, 192, 143, 0.18)),
+        repeating-linear-gradient(0deg, #ffffff, #ffffff 8px, #f7f4ee 8px, #f7f4ee 16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pub-thumb::before,
+    .pub-thumb::after {
+      content: "";
+      position: absolute;
+      background: rgba(63, 111, 186, 0.14);
+    }
+
+    .pub-thumb::before {
+      width: 54px;
+      height: 54px;
+      left: 10px;
+      top: 12px;
+      border: 1px solid rgba(63, 111, 186, 0.18);
+      background: linear-gradient(135deg, rgba(63, 111, 186, 0.12), rgba(255, 255, 255, 0.4));
+    }
+
+    .pub-thumb::after {
+      width: 72px;
+      height: 20px;
+      right: 10px;
+      bottom: 12px;
+      box-shadow:
+        0 -26px 0 rgba(154, 127, 119, 0.12),
+        -14px -50px 0 rgba(220, 192, 143, 0.16);
+    }
+
+    .pub-rank {
+      margin-bottom: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .pub-authors {
+      font-size: 1.02rem;
     }
 
     .self {
-      color: var(--accent);
-      font-weight: 700;
+      color: #c1892d;
+      font-weight: 400;
     }
 
-    .badge {
-      display: inline-block;
-      margin-right: 8px;
-      margin-top: 8px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-      font-size: 0.8rem;
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .pub-venue {
+      font-size: 1.02rem;
+    }
+
+    .pub-links {
+      margin-top: 3px;
+      font-size: 0.98rem;
+    }
+
+    .split p {
+      margin: 0 0 8px;
     }
 
     .footer {
-      margin-top: 44px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      margin-top: 26px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd6cb;
       color: var(--muted);
-      font-size: 0.92rem;
-      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+      font-size: 0.94rem;
     }
 
-    @media (max-width: 760px) {
-      .hero {
+    @media (max-width: 820px) {
+      .intro,
+      .pub-item {
         grid-template-columns: 1fr;
-        gap: 26px;
       }
 
-      .aside {
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        padding-left: 0;
-        padding-top: 20px;
+      .pub-thumb {
+        width: 100%;
+        max-width: 240px;
       }
 
-      .topbar {
-        flex-direction: column;
+      .header-band {
         align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <nav>
-        <a href="#about" data-lang data-zh="简介" data-en="About">简介</a>
-        <a href="#education" data-lang data-zh="教育经历" data-en="Education">教育经历</a>
-        <a href="#publications" data-lang data-zh="论文成果" data-en="Publications">论文成果</a>
-        <a href="#projects" data-lang data-zh="项目" data-en="Projects">项目</a>
-        <a href="#awards" data-lang data-zh="获奖与服务" data-en="Awards & Service">获奖与服务</a>
-      </nav>
+  <div class="wrap">
+    <header class="header-band">
+      <div class="header-main">
+        <div class="logo">GX</div>
+        <div class="title-box">
+          <h1 data-lang data-zh="耿雪莉" data-en="Xueli Geng">耿雪莉</h1>
+          <div class="subline" data-lang data-zh="Academic Homepage / Curriculum Vitae" data-en="Academic Homepage / Curriculum Vitae">Academic Homepage / Curriculum Vitae</div>
+        </div>
+      </div>
       <button class="lang-toggle" id="langToggle" type="button">EN</button>
     </header>
 
-    <section class="hero" id="about">
-      <div>
-        <h1 data-lang data-zh="耿雪莉" data-en="Xueli Geng">耿雪莉</h1>
-        <div class="subtitle" data-lang
-          data-zh="助理研究员 / 全职博士后，西安电子科技大学人工智能学院"
-          data-en="Assistant Research Fellow / Postdoctoral Researcher, School of Artificial Intelligence, Xidian University">
-          助理研究员 / 全职博士后，西安电子科技大学人工智能学院
+    <main class="content">
+      <section class="intro">
+        <div>
+          <p data-lang
+            data-zh="耿雪莉，博士，西安电子科技大学人工智能学院全职博士后、助理研究员，师从焦李成教授，隶属智能感知与图像理解教育部重点实验室。研究兴趣主要包括大语言模型、多模态大模型、遥感影像解译以及城市语义理解。相关成果发表于 IEEE TNNLS、IEEE TMM、IEEE TCSVT、IEEE TGRS 等国际期刊。"
+            data-en="Xueli Geng is a Ph.D., assistant research fellow, and full-time postdoctoral researcher at the School of Artificial Intelligence, Xidian University. Advised by Prof. Licheng Jiao and affiliated with the Ministry of Education Key Laboratory of Intelligent Perception and Image Understanding, her research interests include large language models, multimodal foundation models, remote sensing image interpretation, and urban semantic understanding. Her work has appeared in IEEE TNNLS, IEEE TMM, IEEE TCSVT, and IEEE TGRS.">
+            耿雪莉，博士，西安电子科技大学人工智能学院全职博士后、助理研究员，师从焦李成教授，隶属智能感知与图像理解教育部重点实验室。研究兴趣主要包括大语言模型、多模态大模型、遥感影像解译以及城市语义理解。相关成果发表于 IEEE TNNLS、IEEE TMM、IEEE TCSVT、IEEE TGRS 等国际期刊。
+          </p>
+          <p>
+            <a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/index.htm" target="_blank" rel="noreferrer">Xidian Faculty</a> |
+            <a href="https://scholar.google.com.hk/citations?user=HWFd2HMAAAAJ&hl=zh-CN" target="_blank" rel="noreferrer">Google Scholar</a>
+          </p>
         </div>
-        <p class="summary" data-lang
-          data-zh="耿雪莉，博士，西安电子科技大学人工智能学院全职博士后、助理研究员，师从焦李成教授，隶属智能感知与图像理解教育部重点实验室。研究兴趣主要包括大语言模型、多模态大模型、遥感影像解译以及城市语义理解。相关成果发表于 IEEE TNNLS、IEEE TMM、IEEE TCSVT、IEEE TGRS 等国际期刊。"
-          data-en="Xueli Geng is a Ph.D., assistant research fellow, and full-time postdoctoral researcher at the School of Artificial Intelligence, Xidian University. Advised by Prof. Licheng Jiao and affiliated with the Ministry of Education Key Laboratory of Intelligent Perception and Image Understanding, her research interests include large language models, multimodal foundation models, remote sensing image interpretation, and urban semantic understanding. Her work has appeared in IEEE TNNLS, IEEE TMM, IEEE TCSVT, and IEEE TGRS.">
-          耿雪莉，博士，西安电子科技大学人工智能学院全职博士后、助理研究员，师从焦李成教授，隶属智能感知与图像理解教育部重点实验室。研究兴趣主要包括大语言模型、多模态大模型、遥感影像解译以及城市语义理解。相关成果发表于 IEEE TNNLS、IEEE TMM、IEEE TCSVT、IEEE TGRS 等国际期刊。
-        </p>
-        <div class="links">
-          <a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/index.htm" target="_blank" rel="noreferrer">Xidian Faculty</a>
-          <a href="https://scholar.google.com.hk/citations?user=HWFd2HMAAAAJ&hl=zh-CN" target="_blank" rel="noreferrer">Google Scholar</a>
+        <div class="intro-side split">
+          <p><strong data-lang data-zh="职位：" data-en="Position:">职位：</strong><span data-lang data-zh="助理研究员 / 全职博士后" data-en="Assistant Research Fellow / Postdoctoral Researcher">助理研究员 / 全职博士后</span></p>
+          <p><strong data-lang data-zh="单位：" data-en="Affiliation:">单位：</strong><span data-lang data-zh="西安电子科技大学人工智能学院" data-en="School of Artificial Intelligence, Xidian University">西安电子科技大学人工智能学院</span></p>
+          <p><strong data-lang data-zh="研究方向：" data-en="Research interests:">研究方向：</strong><span data-lang data-zh="大语言模型，多模态大模型，遥感影像解译，城市语义理解" data-en="Large language models, multimodal foundation models, remote sensing image interpretation, and urban semantic understanding">大语言模型，多模态大模型，遥感影像解译，城市语义理解</span></p>
         </div>
-      </div>
+      </section>
 
-      <aside class="aside">
-        <div class="aside-block">
-          <div class="aside-label" data-lang data-zh="研究方向" data-en="Research Interests">研究方向</div>
-          <div class="aside-value" data-lang
-            data-zh="大语言模型，多模态大模型，遥感影像解译，城市语义理解"
-            data-en="Large language models, multimodal foundation models, remote sensing image interpretation, urban semantic understanding">
-            大语言模型，多模态大模型，遥感影像解译，城市语义理解
-          </div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-label" data-lang data-zh="所在单位" data-en="Affiliation">所在单位</div>
-          <div class="aside-value" data-lang data-zh="西安电子科技大学人工智能学院" data-en="School of Artificial Intelligence, Xidian University">西安电子科技大学人工智能学院</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-label" data-lang data-zh="当前身份" data-en="Position">当前身份</div>
-          <div class="aside-value" data-lang data-zh="助理研究员 / 全职博士后" data-en="Assistant Research Fellow / Postdoctoral Researcher">助理研究员 / 全职博士后</div>
-        </div>
-        <div class="aside-block">
-          <div class="aside-label" data-lang data-zh="加入时间" data-en="Joined">加入时间</div>
-          <div class="aside-value" data-lang data-zh="2024 年 12 月" data-en="December 2024">2024 年 12 月</div>
-        </div>
-      </aside>
-    </section>
-
-    <section id="education">
-      <h2 data-lang data-zh="教育经历与工作经历" data-en="Education & Experience">教育经历与工作经历</h2>
-      <p class="section-note" data-lang
-        data-zh="这一部分目前基于公开信息整理，后续可继续补充具体年份、专业名称和完整履历。"
-        data-en="This section is currently assembled from public information and can be further refined with exact years, majors, and a complete academic timeline.">
-        这一部分目前基于公开信息整理，后续可继续补充具体年份、专业名称和完整履历。
-      </p>
-      <div class="entry-list">
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="西安电子科技大学，博士研究生毕业" data-en="Xidian University, Ph.D. degree completed">西安电子科技大学，博士研究生毕业</div>
-          <div class="entry-meta" data-lang data-zh="公开主页可确认的毕业院校信息" data-en="Graduating institution confirmed from the public faculty profile">公开主页可确认的毕业院校信息</div>
-        </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="山西大学，本科教育背景" data-en="Shanxi University, undergraduate background">山西大学，本科教育背景</div>
-          <div class="entry-meta" data-lang data-zh="可继续补充院系、专业与起止年份" data-en="Department, major, and dates can be added later">可继续补充院系、专业与起止年份</div>
-        </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="西安电子科技大学人工智能学院，助理研究员 / 全职博士后" data-en="School of Artificial Intelligence, Xidian University, Assistant Research Fellow / Full-time Postdoc">西安电子科技大学人工智能学院，助理研究员 / 全职博士后</div>
-          <div class="entry-meta">2024.12 - Present</div>
-          <div class="entry-extra" data-lang
-            data-zh="围绕多模态智能、遥感理解及城市语义相关方向开展科研工作。"
-            data-en="Conducting research on multimodal intelligence, remote sensing understanding, and urban semantic analysis.">
-            围绕多模态智能、遥感理解及城市语义相关方向开展科研工作。
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications">
-      <h2 data-lang data-zh="代表性论文" data-en="Selected Publications">代表性论文</h2>
-      <p class="section-note" data-lang
-        data-zh="以下论文依据西安电子科技大学主页公开信息整理。"
-        data-en="The following publications are curated from the public Xidian faculty profile.">
-        以下论文依据西安电子科技大学主页公开信息整理。
-      </p>
-      <div class="entry-list">
-        <div class="entry">
-          <span class="badge">IEEE TNNLS · 2024</span>
-          <div class="paper-title">A Spatial-Spectral Relation-Guided Fusion Network for Multisource Optical RS Image Classification</div>
-          <div class="authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Xu Liu, Lingling Li, Puhua Chen, Fang Liu, Shuyuan Yang</div>
-          <div class="entry-extra" data-lang
-            data-zh="多源光学遥感影像分类，空间-光谱关系建模。"
-            data-en="Multisource optical remote sensing classification with spatial-spectral relation modeling.">
-            多源光学遥感影像分类，空间-光谱关系建模。
-          </div>
-        </div>
-        <div class="entry">
-          <span class="badge">IEEE TMM · 2024</span>
-          <div class="paper-title">Fast and Effective: Progressive Hierarchical Fusion Classification for Remote Sensing Images</div>
-          <div class="authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Xu Liu, Fang Liu, Shuyuan Yang</div>
-          <div class="entry-extra" data-lang
-            data-zh="面向遥感影像的渐进式层次融合分类方法。"
-            data-en="A progressive hierarchical fusion framework for remote sensing image classification.">
-            面向遥感影像的渐进式层次融合分类方法。
-          </div>
-        </div>
-        <div class="entry">
-          <span class="badge">IEEE TCSVT · 2024</span>
-          <div class="paper-title">Knowledge-Aware Geometric Contourlet Semantic Learning for Hyperspectral Image Classification</div>
-          <div class="authors"><span class="self">Xueli Geng</span>, Lingling Li, Licheng Jiao, Xu Liu, Fang Liu, Shuyuan Yang</div>
-          <div class="entry-extra" data-lang
-            data-zh="知识感知的几何轮廓波语义学习，高光谱影像分类。"
-            data-en="Knowledge-aware geometric contourlet semantic learning for hyperspectral image classification.">
-            知识感知的几何轮廓波语义学习，高光谱影像分类。
-          </div>
-        </div>
-        <div class="entry">
-          <span class="badge">IEEE TGRS · 2023</span>
-          <div class="paper-title">Multisource Joint Representation Learning Fusion Classification for Remote Sensing Images</div>
-          <div class="authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Fang Liu, Xu Liu, Shuyuan Yang, Xiangrong Zhang</div>
-          <div class="entry-extra" data-lang
-            data-zh="多源遥感影像联合表征学习与融合分类。"
-            data-en="Joint representation learning and fusion classification for multisource remote sensing imagery.">
-            多源遥感影像联合表征学习与融合分类。
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2 data-lang data-zh="项目" data-en="Projects">项目</h2>
-      <div class="entry-list">
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="中国博士后科学基金第 77 批面上资助" data-en="China Postdoctoral Science Foundation, 77th General Program">中国博士后科学基金第 77 批面上资助</div>
-          <div class="entry-meta" data-lang data-zh="主持，2025 年 7 月立项，在研" data-en="Principal Investigator, started in July 2025, ongoing">主持，2025 年 7 月立项，在研</div>
-        </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="陕西省博士后科研项目资助" data-en="Shaanxi Postdoctoral Research Funding Program">陕西省博士后科研项目资助</div>
-          <div class="entry-meta" data-lang data-zh="主持，2025 年 8 月立项，在研" data-en="Principal Investigator, started in August 2025, ongoing">主持，2025 年 8 月立项，在研</div>
-        </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="西安电子科技大学基本科研业务费项目" data-en="Xidian University Fundamental Research Funds">西安电子科技大学基本科研业务费项目</div>
-          <div class="entry-meta" data-lang data-zh="主持，2026 年 1 月至 2026 年 11 月，在研" data-en="Principal Investigator, January 2026 to November 2026, ongoing">主持，2026 年 1 月至 2026 年 11 月，在研</div>
-        </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="国家自然科学基金重点项目与联合项目" data-en="NSFC Key and Joint Projects">国家自然科学基金重点项目与联合项目</div>
-          <div class="entry-meta" data-lang
-            data-zh="作为核心成员参与，具体项目名称可后续补充"
-            data-en="Served as a core participant; full project titles can be added later">
-            作为核心成员参与，具体项目名称可后续补充
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="awards">
-      <h2 data-lang data-zh="获奖与学术服务" data-en="Awards & Academic Service">获奖与学术服务</h2>
-      <div class="entry-list">
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="国际竞赛奖项" data-en="International Challenge Awards">国际竞赛奖项</div>
-          <ul class="plain-list">
-            <li data-lang data-zh="CVPR 多模态鸟瞰图分类挑战赛，国际冠军，2021 年 6 月" data-en="CVPR Multimodal Bird's-Eye View Classification Challenge, Champion, June 2021">CVPR 多模态鸟瞰图分类挑战赛，国际冠军，2021 年 6 月</li>
-            <li data-lang data-zh="IEEE GRSS 数据融合国际挑战赛，国际冠军，2021 年 3 月" data-en="IEEE GRSS Data Fusion Contest, Champion, March 2021">IEEE GRSS 数据融合国际挑战赛，国际冠军，2021 年 3 月</li>
-            <li data-lang data-zh="CVPR 洪水图像视觉问答挑战赛，国际冠军，2021 年 6 月" data-en="CVPR Flood Image Visual Question Answering Challenge, Champion, June 2021">CVPR 洪水图像视觉问答挑战赛，国际冠军，2021 年 6 月</li>
-            <li data-lang data-zh="CVPR 多模态航拍视角物体分类挑战赛，国际亚军，2022 年 6 月" data-en="CVPR Multimodal Aerial View Object Classification Challenge, Runner-up, June 2022">CVPR 多模态航拍视角物体分类挑战赛，国际亚军，2022 年 6 月</li>
+      <section class="section">
+        <h2 data-lang data-zh="Education" data-en="Education">Education</h2>
+        <div class="section-rule"></div>
+        <div class="section-body">
+          <ul class="list">
+            <li data-lang data-zh="西安电子科技大学，博士研究生毕业。" data-en="Ph.D., Xidian University.">西安电子科技大学，博士研究生毕业。</li>
+            <li data-lang data-zh="山西大学，本科教育背景。具体院系、专业与起止年份可继续补充。" data-en="Undergraduate background at Shanxi University. Department, major, and dates can be added later.">山西大学，本科教育背景。具体院系、专业与起止年份可继续补充。</li>
+            <li data-lang data-zh="2024.12 至今，西安电子科技大学人工智能学院，助理研究员 / 全职博士后。" data-en="Dec. 2024 - Present, Assistant Research Fellow / Full-time Postdoctoral Researcher, School of Artificial Intelligence, Xidian University.">2024.12 至今，西安电子科技大学人工智能学院，助理研究员 / 全职博士后。</li>
           </ul>
         </div>
-        <div class="entry">
-          <div class="entry-title" data-lang data-zh="学术服务" data-en="Professional Service">学术服务</div>
-          <ul class="plain-list">
-            <li data-lang data-zh="中国图象图形学学会图像应用与系统集成专委会委员" data-en="Committee Member, CSIG Image Application and System Integration">中国图象图形学学会图像应用与系统集成专委会委员</li>
-            <li>Reviewer, IEEE Transactions on Neural Networks and Learning Systems</li>
-            <li>Reviewer, Knowledge-Based Systems</li>
+      </section>
+
+      <section class="section">
+        <h2 data-lang data-zh="Publications" data-en="Publications">Publications</h2>
+        <div class="section-rule"></div>
+        <div class="section-body">
+          <p class="note" data-lang data-zh="* 论文列表依据公开主页整理。" data-en="* Publication list curated from the public faculty profile.">* 论文列表依据公开主页整理。</p>
+
+          <div class="pub-group">
+            <div class="pub-label">Journal</div>
+
+            <article class="pub-item">
+              <div>
+                <div class="pub-rank">Q1</div>
+                <div class="pub-thumb" aria-hidden="true"></div>
+              </div>
+              <div>
+                <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Xu Liu, Lingling Li, Puhua Chen, Fang Liu, Shuyuan Yang</div>
+                <div class="pub-title">A Spatial-Spectral Relation-Guided Fusion Network for Multisource Optical RS Image Classification</div>
+                <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4020.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+              </div>
+            </article>
+
+            <article class="pub-item">
+              <div>
+                <div class="pub-rank">Q1</div>
+                <div class="pub-thumb" aria-hidden="true"></div>
+              </div>
+              <div>
+                <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Xu Liu, Fang Liu, Shuyuan Yang</div>
+                <div class="pub-title">Fast and Effective: Progressive Hierarchical Fusion Classification for Remote Sensing Images</div>
+                <div class="pub-venue">IEEE Transactions on Multimedia (TMM), 2024</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4019.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+              </div>
+            </article>
+
+            <article class="pub-item">
+              <div>
+                <div class="pub-rank">Q1</div>
+                <div class="pub-thumb" aria-hidden="true"></div>
+              </div>
+              <div>
+                <div class="pub-authors"><span class="self">Xueli Geng</span>, Lingling Li, Licheng Jiao, Xu Liu, Fang Liu, Shuyuan Yang</div>
+                <div class="pub-title">Knowledge-Aware Geometric Contourlet Semantic Learning for Hyperspectral Image Classification</div>
+                <div class="pub-venue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2024</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4018.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+              </div>
+            </article>
+
+            <article class="pub-item">
+              <div>
+                <div class="pub-rank">Q1</div>
+                <div class="pub-thumb" aria-hidden="true"></div>
+              </div>
+              <div>
+                <div class="pub-authors"><span class="self">Xueli Geng</span>, Licheng Jiao, Lingling Li, Fang Liu, Xu Liu, Shuyuan Yang, Xiangrong Zhang</div>
+                <div class="pub-title">Multisource Joint Representation Learning Fusion Classification for Remote Sensing Images</div>
+                <div class="pub-venue">IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2023</div>
+                <div class="pub-links">[<a href="https://faculty.xidian.edu.cn/gengxueli/zh_CN/lwcg/486672/content/4017.htm" target="_blank" rel="noreferrer">Paper</a>]</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 data-lang data-zh="Projects" data-en="Projects">Projects</h2>
+        <div class="section-rule"></div>
+        <div class="section-body">
+          <ul class="list">
+            <li data-lang data-zh="中国博士后科学基金第 77 批面上资助，主持，2025 年 7 月立项，在研。" data-en="China Postdoctoral Science Foundation, 77th General Program, Principal Investigator, started in July 2025, ongoing.">中国博士后科学基金第 77 批面上资助，主持，2025 年 7 月立项，在研。</li>
+            <li data-lang data-zh="陕西省博士后科研项目资助，主持，2025 年 8 月立项，在研。" data-en="Shaanxi Postdoctoral Research Funding Program, Principal Investigator, started in August 2025, ongoing.">陕西省博士后科研项目资助，主持，2025 年 8 月立项，在研。</li>
+            <li data-lang data-zh="西安电子科技大学基本科研业务费项目，主持，2026 年 1 月至 2026 年 11 月，在研。" data-en="Xidian University Fundamental Research Funds, Principal Investigator, Jan. 2026 to Nov. 2026, ongoing.">西安电子科技大学基本科研业务费项目，主持，2026 年 1 月至 2026 年 11 月，在研。</li>
+            <li data-lang data-zh="国家自然科学基金重点项目与联合项目，作为核心成员参与。" data-en="NSFC key and joint projects, participated as a core member.">国家自然科学基金重点项目与联合项目，作为核心成员参与。</li>
           </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="footer" data-lang
-      data-zh="本页根据公开资料整理并制作，支持 GitHub Pages 发布。若你提供更完整的教育背景、邮箱、照片、完整论文列表，我可以继续细化为正式版学术主页。"
-      data-en="This page is assembled from public information and published-ready for GitHub Pages. With a fuller CV, email, portrait, and complete publication list, it can be refined into a more formal academic homepage.">
-      本页根据公开资料整理并制作，支持 GitHub Pages 发布。若你提供更完整的教育背景、邮箱、照片、完整论文列表，我可以继续细化为正式版学术主页。
-    </div>
+      <section class="section">
+        <h2 data-lang data-zh="Honors & Service" data-en="Honors & Service">Honors & Service</h2>
+        <div class="section-rule"></div>
+        <div class="section-body">
+          <ul class="list">
+            <li data-lang data-zh="CVPR 多模态鸟瞰图分类挑战赛，国际冠军，2021 年 6 月。" data-en="CVPR Multimodal Bird's-Eye View Classification Challenge, Champion, June 2021.">CVPR 多模态鸟瞰图分类挑战赛，国际冠军，2021 年 6 月。</li>
+            <li data-lang data-zh="IEEE GRSS 数据融合国际挑战赛，国际冠军，2021 年 3 月。" data-en="IEEE GRSS Data Fusion Contest, Champion, March 2021.">IEEE GRSS 数据融合国际挑战赛，国际冠军，2021 年 3 月。</li>
+            <li data-lang data-zh="CVPR 洪水图像视觉问答挑战赛，国际冠军，2021 年 6 月。" data-en="CVPR Flood Image Visual Question Answering Challenge, Champion, June 2021.">CVPR 洪水图像视觉问答挑战赛，国际冠军，2021 年 6 月。</li>
+            <li data-lang data-zh="CVPR 多模态航拍视角物体分类挑战赛，国际亚军，2022 年 6 月。" data-en="CVPR Multimodal Aerial View Object Classification Challenge, Runner-up, June 2022.">CVPR 多模态航拍视角物体分类挑战赛，国际亚军，2022 年 6 月。</li>
+            <li data-lang data-zh="中国图象图形学学会图像应用与系统集成专委会委员。" data-en="Committee Member, CSIG Image Application and System Integration.">中国图象图形学学会图像应用与系统集成专委会委员。</li>
+            <li>Reviewer, IEEE Transactions on Neural Networks and Learning Systems.</li>
+            <li>Reviewer, Knowledge-Based Systems.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="footer" data-lang
+        data-zh="如果你提供正式照片、完整论文列表和准确教育经历，我可以继续把它调得更像目标模板。"
+        data-en="With a formal portrait, a complete publication list, and exact education records, this page can be refined even closer to the target template.">
+        如果你提供正式照片、完整论文列表和准确教育经历，我可以继续把它调得更像目标模板。
+      </div>
+    </main>
   </div>
 
   <script>
@@ -461,10 +451,7 @@
       document.title = next === "zh" ? "耿雪莉 | Academic Homepage" : "Xueli Geng | Academic Homepage";
     }
 
-    toggle.addEventListener("click", () => {
-      applyLang(lang === "zh" ? "en" : "zh");
-    });
-
+    toggle.addEventListener("click", () => applyLang(lang === "zh" ? "en" : "zh"));
     applyLang("zh");
   </script>
 </body>
