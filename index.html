@@ -171,6 +171,37 @@
       margin-top: 7px;
     }
 
+    .edu-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .edu-item {
+      padding-bottom: 10px;
+    }
+
+    .edu-line1,
+    .edu-line2 {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .edu-line1 {
+      font-weight: 700;
+    }
+
+    .edu-line2 {
+      margin-top: 4px;
+      font-size: 0.98rem;
+    }
+
+    .edu-date,
+    .edu-loc {
+      white-space: nowrap;
+    }
+
     .pub-group {
       margin-top: 8px;
     }
@@ -370,11 +401,40 @@
         <h2 data-lang data-zh="Education" data-en="Education">Education</h2>
         <div class="section-rule"></div>
         <div class="section-body">
-          <ul class="list">
-            <li data-lang data-zh="2019.09 - 2024.12，西安电子科技大学，人工智能学院，计算机科学与技术，硕博连读，成绩 93.52，导师：焦李成，陕西西安。" data-en="Sep. 2019 - Dec. 2024, Xidian University, School of Artificial Intelligence, Computer Science and Technology, combined master's and doctoral program, GPA 93.52, advisor: Licheng Jiao, Xi'an, Shaanxi.">2019.09 - 2024.12，西安电子科技大学，人工智能学院，计算机科学与技术，硕博连读，成绩 93.52，导师：焦李成，陕西西安。</li>
-            <li data-lang data-zh="2015.09 - 2019.07，山西大学，物理电子工程学院，电子信息科学与技术，本科，山西太原。" data-en="Sep. 2015 - Jul. 2019, Shanxi University, School of Physics and Electronic Engineering, Electronic Information Science and Technology, B.Eng., Taiyuan, Shanxi.">2015.09 - 2019.07，山西大学，物理电子工程学院，电子信息科学与技术，本科，山西太原。</li>
-            <li data-lang data-zh="2024.12 至今，西安电子科技大学人工智能学院，助理研究员 / 全职博士后。" data-en="Dec. 2024 - Present, Assistant Research Fellow / Full-time Postdoctoral Researcher, School of Artificial Intelligence, Xidian University.">2024.12 至今，西安电子科技大学人工智能学院，助理研究员 / 全职博士后。</li>
-          </ul>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-line1">
+                <span data-lang data-zh="西安电子科技大学  成绩：93.52" data-en="Xidian University  GPA: 93.52">西安电子科技大学  成绩：93.52</span>
+                <span class="edu-date">2019.09 - 2024.12</span>
+              </div>
+              <div class="edu-line2">
+                <span data-lang data-zh="计算机科学与技术  ·  硕博连读  ·  人工智能学院  ·  导师：焦李成" data-en="Computer Science and Technology  ·  Combined M.S./Ph.D. Program  ·  School of Artificial Intelligence  ·  Advisor: Licheng Jiao">计算机科学与技术  ·  硕博连读  ·  人工智能学院  ·  导师：焦李成</span>
+                <span class="edu-loc" data-lang data-zh="陕西西安" data-en="Xi'an, Shaanxi">陕西西安</span>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-line1">
+                <span data-lang data-zh="山西大学" data-en="Shanxi University">山西大学</span>
+                <span class="edu-date">2015.09 - 2019.07</span>
+              </div>
+              <div class="edu-line2">
+                <span data-lang data-zh="电子信息科学与技术  ·  本科  ·  物理电子工程学院" data-en="Electronic Information Science and Technology  ·  B.Eng.  ·  School of Physics and Electronic Engineering">电子信息科学与技术  ·  本科  ·  物理电子工程学院</span>
+                <span class="edu-loc" data-lang data-zh="山西太原" data-en="Taiyuan, Shanxi">山西太原</span>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-line1">
+                <span data-lang data-zh="西安电子科技大学人工智能学院" data-en="School of Artificial Intelligence, Xidian University">西安电子科技大学人工智能学院</span>
+                <span class="edu-date" data-lang data-zh="2024.12 - 至今" data-en="Dec. 2024 - Present">2024.12 - 至今</span>
+              </div>
+              <div class="edu-line2">
+                <span data-lang data-zh="助理研究员  ·  全职博士后" data-en="Assistant Research Fellow  ·  Full-time Postdoctoral Researcher">助理研究员  ·  全职博士后</span>
+                <span class="edu-loc" data-lang data-zh="陕西西安" data-en="Xi'an, Shaanxi">陕西西安</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
